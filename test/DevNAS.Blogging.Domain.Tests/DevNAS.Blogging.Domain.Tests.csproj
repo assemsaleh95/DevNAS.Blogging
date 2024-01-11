@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DevNAS.Blogging</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DevNAS.Blogging.Domain\DevNAS.Blogging.Domain.csproj" />
+    <ProjectReference Include="..\DevNAS.Blogging.TestBase\DevNAS.Blogging.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

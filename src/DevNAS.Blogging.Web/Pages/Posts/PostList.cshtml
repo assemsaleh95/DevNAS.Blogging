@@ -1,0 +1,42 @@
+﻿@page
+@using DevNAS.Blogging.Localization
+@using DevNAS.Blogging.Web.Pages.Posts
+@using Microsoft.Extensions.Localization
+@model PostListModel
+@inject IStringLocalizer<BloggingResource> L
+@section scripts
+{
+    <abp-script src="/Pages/Posts/List.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Posts"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                <label for="pageSize">@L["PostsPerPage"]:</label>
+                <select id="pageSize">
+                    <option value="20">20</option>
+                    <option value="2">2</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <abp-button id="NewPostButton"
+                            text="@L["NewPost"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+
+        <div id="postsContainer">
+            <!-- Display posts here -->
+        </div>
+        <div id="paginationContainer"></div>
+    </abp-card-body>
+</abp-card>
